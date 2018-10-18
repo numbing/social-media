@@ -1,0 +1,23 @@
+{
+  "name": "social-media",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "server" :"nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/numbing/social-media.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/numbing/social-media/issues"
+  },
+  "homepage": "https://github.com/numbing/social-media#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
