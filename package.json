@@ -19,5 +19,9 @@
   "homepage": "https://github.com/numbing/social-media#readme",
   "devDependencies": {
     "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "express": "latest",
+    "mongoose": "latest"
   }
 }
