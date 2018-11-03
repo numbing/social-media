@@ -1,11 +1,11 @@
 {
   "name": "social-media",
   "version": "1.0.0",
-  "description": "",
+  "description": "social media for cool ppl",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "server" :"nodemon server.js"
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,10 @@
     "nodemon": "^1.18.4"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "latest",
-    "mongoose": "latest"
+    "mongoose": "latest",
+    "gravatar": "latest",
+    "bcryptjs": "latest"
   }
 }

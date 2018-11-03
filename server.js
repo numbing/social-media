@@ -1,9 +1,17 @@
 const express = require("express");
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
+const app = express();
+
+//body parser middleware
+
+app.use(bodyParser.urlencoded({extend: false}));
+app.use(bodyParser.json());
+
 
 // DB config
 
@@ -15,7 +23,6 @@ mongoose
     .then(() => console.log("MongoDB Connected "))
     .catch(err => console.log("something is wrong with mongoos", err));
 
-const app = express();
 
 app.get('/', (req, res) => res.send("hello"));
 //use Routes
