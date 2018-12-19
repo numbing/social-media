@@ -9,6 +9,7 @@ const passport = require("passport");
 
 //load input validation
 const validateRegisterInput = require("../../validation/register");
+const validateLoginInput = require("../../validation/login");
 
 //get api/users/test
 
@@ -28,7 +29,8 @@ router.post('/register', (req, res) => {
     User.findOne({email: req.body.email})
         .then(user => {
             if (user) {
-                return res.status(400).json({email: "Email already exists"});
+                errors.email = "Email already exists";
+                return res.status(400).json({errors});
             } else {
                 const avatar = gravatar.url(req.body.email, {
                     s: '200',
@@ -59,6 +61,14 @@ router.post('/register', (req, res) => {
 
 
 router.post('/login', (req, res) => {
+    const {errors, isValid} = validateLoginInput(req.body);
+
+    //check validation
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+
+
     const email = req.body.email;
     const password = req.body.password;
 
@@ -66,7 +76,8 @@ router.post('/login', (req, res) => {
         .then(user => {
             //check for user
             if (!user) {
-                return res.status(404).json({email: "user not found"});
+                errors.email = "user not found";
+                return res.status(404).json(errors);
             }
             //check password
             bcrypt.compare(password, user.password)
@@ -91,13 +102,14 @@ router.post('/login', (req, res) => {
                                 })
                             });
                     } else {
-                        return res.status(400).json({password: "password incorrect"})
+                        errors.password = "password incorrect"
+                        return res.status(400).json(errors)
                     }
                 })
         })
 });
 //ger api/users/current
-//acces Private
+//access Private
 router.get("/current", passport.authenticate("jwt", {session: false}), (req, res) => {
     res.json({
         id: req.user.id,
