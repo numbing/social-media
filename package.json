@@ -21,10 +21,11 @@
     "nodemon": "^1.18.4"
   },
   "dependencies": {
+    "bcryptjs": "latest",
     "body-parser": "^1.18.3",
     "express": "latest",
-    "mongoose": "latest",
     "gravatar": "latest",
-    "bcryptjs": "latest"
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "latest"
   }
 }
