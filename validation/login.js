@@ -10,7 +10,6 @@ module.exports = function validateLoginInput(data) {
     data.password = !isEmpty(data.password) ? data.password : "";
 
 
-
     if (Validator.isEmpty(data.password)) {
         errors.password = "Password field is required";
     }
@@ -21,7 +20,6 @@ module.exports = function validateLoginInput(data) {
     if (Validator.isEmpty(data.email)) {
         errors.email = "Email field is required";
     }
-
 
     return {
         errors,
