@@ -12,7 +12,7 @@ const ProfileSchema = new Schema({
         required: true,
         max: 40
     },
-    compony: {
+    company: {
         type: String,
     },
     website: {
