@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js"
+
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   "dependencies": {
     "bcryptjs": "latest",
     "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
     "express": "latest",
     "gravatar": "latest",
     "jsonwebtoken": "^8.4.0",
