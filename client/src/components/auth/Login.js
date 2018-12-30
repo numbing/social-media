@@ -48,7 +48,7 @@ class Login extends Component {
 
   render() {
     const { errors } = this.state;
-
+    console.log(errors.email);
     return (
       <div className="login">
         <div className="container">
